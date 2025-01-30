@@ -1,5 +1,14 @@
 function showMessage(response) {
   let videoPlayed = false;
+  
+  const preloadedVideo = document.createElement("video");
+  preloadedVideo.src = "./Maroon 5 - Sugar.mp4#t=42";
+  preloadedVideo.preload = "auto"; // Preloads the video
+  preloadedVideo.autoplay = true;
+  preloadedVideo.controls = false;
+  document.body.appendChild(preloadedVideo);
+  preloadedVideo.style.display = "none";
+
   if (response === "No") {
     const noButton = document.getElementById("no-button");
     const maxWidth = window.innerWidth - noButton.offsetWidth;
@@ -27,17 +36,14 @@ function showMessage(response) {
     // Add a mouseover event listener to the "No" button
     noButton.addEventListener("mouseover", () => {
       if (!videoPlayed) {
-        const videoElement = document.createElement("video");
-        videoElement.src = "./Maroon 5 - Sugar.mp4#t=42";
-        videoElement.autoplay = true;
-        videoElement.controls = false;
-        document.body.appendChild(videoElement);
-        videoElement.style.position = "fixed";
-        videoElement.style.top = "40%";
-        videoElement.style.left = "50%";
-        videoElement.style.transform = "translate(-50%, -50%)";
-        videoElement.style.width = "700px"
-        document.body.appendChild(videoElement);
+        preloadedVideo.style.display = "block"; // Show the video
+        preloadedVideo.autoplay = true;
+        preloadedVideo.controls = false;
+        preloadedVideo.style.position = "fixed";
+        preloadedVideo.style.top = "40%";
+        preloadedVideo.style.left = "50%";
+        preloadedVideo.style.transform = "translate(-50%, -50%)";
+        preloadedVideo.style.width = "700px";
         // Set the flag to true after playing the video
         videoPlayed = true;
       }
@@ -55,6 +61,11 @@ function showMessage(response) {
 
   if (response === "Yes") {
     // Remove the name message and the "No" button
+    preloadedVideo.pause();  // Stop playback
+    preloadedVideo.src = ""; // Clear the video source
+    preloadedVideo.load();   // Reset the video element
+    preloadedVideo.remove(); // Remove from DOM
+
     document.getElementById("name").remove();
     document.getElementById("no-button").remove();
     const videoElement = document.querySelector("video");
