@@ -18,7 +18,7 @@ function showMessage(response) {
     noButton.style.position = "absolute";
 
     // Change the image source to "gun.gif"
-    document.getElementsByClassName("image")[0].src = "images/gun.gif";
+    document.getElementsByClassName("image")[0].src = "https://media.giphy.com/media/SL9esQ2xRZT5h6PB7w/giphy.gif";
 
     // Generate random coordinates within the visible container
     const randomX = Math.max(0, Math.floor(Math.random() * maxWidth));
@@ -30,7 +30,9 @@ function showMessage(response) {
 
     // Update text content and hide the name message
     document.getElementById("question").textContent =
-      "Bhai tf sharam krle 😭";
+      "Haha gotcha";
+      document.getElementById("question2").textContent =
+      "(You clicked on No though 😥)";
     document.getElementById("name").style.display = "none";
 
     // Add a mouseover event listener to the "No" button
@@ -96,12 +98,17 @@ function showMessage(response) {
 
     // Update the text content, display the message, and change the image to "dance.gif"
     const yesMessage = document.getElementById("question");
-    yesMessage.textContent = "Yayyyyyyyyy!!! Was this really better than the toothbrush though? ";
+    yesMessage.textContent = "Okay okay I'll be your valentine 😸. You're welcome. ";
     yesMessage.style.display = "block";
     yesMessage.style.fontStyle = "normal";
     
     document.body.style.backgroundImage = "url('images/gunj copy.jpg')"; 
-    document.getElementsByClassName("image")[0].src = "images/dance.gif"; 
+    document.getElementsByClassName("image")[0].src = "	https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYW9mYmM1MGw4NDlmZ252ZHhteXBuZHFsZTBiN2tqcmMxaGx2bjJibiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/9YUDLa1yFY5rDQy7s3/giphy.gif"; 
+
+    const yesMessage2 = document.getElementById("question2");
+    yesMessage2.textContent = "Was this really better than the toothbrush though? ";
+    yesMessage2.style.display = "block";
+    yesMessage2.style.fontStyle = "normal";
 
     // Remove the "Yes" button
     document.getElementById("yesButton").remove();
