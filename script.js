@@ -75,7 +75,7 @@ function showMessage(response) {
     yesMessage.textContent = "Yayyyyyyyyy!!! Was this really better than the toothbrush though? ";
     yesMessage.style.display = "block";
     yesMessage.style.fontStyle = "normal";
-    document.getElementsByClassName("image")[0].src = "images/gunj.jpg";
+    document.getElementsByClassName("image")[0].src = "images/Gunj.jpg";
 
     // Remove the "Yes" button
     document.getElementById("yesButton").remove();
