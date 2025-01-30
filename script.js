@@ -1,6 +1,6 @@
 function showMessage(response) {
   let videoPlayed = false;
-  
+  let playingAudio = false;
   // const preloadedVideo = document.createElement("video");
   // preloadedVideo.src = "./Maroon 5 - Sugar.mp4#t=42";
   // preloadedVideo.preload = "auto"; // Preloads the video
@@ -99,7 +99,9 @@ function showMessage(response) {
     yesMessage.textContent = "Yayyyyyyyyy!!! Was this really better than the toothbrush though? ";
     yesMessage.style.display = "block";
     yesMessage.style.fontStyle = "normal";
-    document.getElementsByClassName("image")[0].src = "images/gunj copy.jpg"; 
+    
+    document.body.style.backgroundImage = "url('images/gunj copy.jpg')"; 
+    document.getElementsByClassName("image")[0].src = "images/dance.gif"; 
 
     // Remove the "Yes" button
     document.getElementById("yesButton").remove();
