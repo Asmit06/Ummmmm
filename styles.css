@@ -44,6 +44,14 @@ body .container2 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
+@media (max-width: 768px) {
+  body .container2 {
+    width: 80%; /* Adjust width to not take full screen */
+    height: auto; /* Allow the height to adjust based on content */
+    margin: 0 auto; /* Center the container */
+  }
+}
+
 .image {
   height: 280px;
 }
