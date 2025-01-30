@@ -1,3 +1,7 @@
+function isTouchDevice() {
+  return "ontouchstart" in window || navigator.maxTouchPoints > 0;
+}
+
 function showMessage(response) {
   let videoPlayed = false;
   
@@ -34,7 +38,7 @@ function showMessage(response) {
     document.getElementById("name").style.display = "none";
 
     // Add a mouseover event listener to the "No" button
-    noButton.addEventListener("mouseover", () => {
+    noButton.addEventListener("mouseenter", () => {
       if (!videoPlayed) {
         preloadedVideo.style.display = "block"; // Show the video
         preloadedVideo.autoplay = true;
